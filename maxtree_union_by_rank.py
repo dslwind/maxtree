@@ -30,17 +30,6 @@ def find_node(x, k):
         return True
 
 
-def one2two(o):
-    t = np.array([[(undef, undef)] * width] * height)
-    for i in range(height):
-        for j in range(width):
-            index = i * width + j
-            x = o[index] / width
-            y = o[index] % width
-            t[i][j] = np.array([(x, y)])
-    return t
-
-
 def neighbors(p):
     n = []
     if p > width:

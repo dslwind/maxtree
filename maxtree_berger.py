@@ -1,7 +1,7 @@
 import numpy as np
 import time
 
-
+## Recursive find_root
 # def find_root(x):
 #     if zpar[x] == x:
 #         return x
@@ -11,28 +11,19 @@ import time
 
 
 def find_root(x):
+    """Non-recursive version find_root procedure"""
+
     r = x
     while not r == zpar[r]:
         r = zpar[r]
-    
+
     t1 = x
     while not t1 == r:
         t2 = zpar[t1]
         zpar[t1] = r
         t1 = t2
-    
+
     return r
-
-
-def one2two(o):
-    t = np.array([[(undef, undef)] * width] * height)
-    for i in range(height):
-        for j in range(width):
-            index = i * width + j
-            x = o[index] / width
-            y = o[index] % width
-            t[i][j] = np.array([(x, y)])
-    return t
 
 
 def neighbors(p):
